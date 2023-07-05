@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ef3e0942a6a7e4a9773f3dad0b837e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 737442365}
+  speed: 3
+--- !u!1 &737442360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4861137154031002086, guid: 4e4b648a15baa1047a0899a803e45b2a, type: 3}
+  m_PrefabInstance: {fileID: 4861137152949480696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &737442365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4861137154031002074, guid: 4e4b648a15baa1047a0899a803e45b2a, type: 3}
+  m_PrefabInstance: {fileID: 4861137152949480696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &737442366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737442360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e874546735278449853f925dcc23fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 519420031}
+  speed: 4
 --- !u!1001 &4861137152949480696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,6 +296,10 @@ PrefabInstance:
     - target: {fileID: 4861137154031002074, guid: 4e4b648a15baa1047a0899a803e45b2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861137154031002076, guid: 4e4b648a15baa1047a0899a803e45b2a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4861137154031002086, guid: 4e4b648a15baa1047a0899a803e45b2a, type: 3}
       propertyPath: m_Name
