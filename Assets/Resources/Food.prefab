@@ -10,9 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6766387011938626267}
   - component: {fileID: 8335078533237206586}
+<<<<<<< HEAD:Assets/Resources/Ball.prefab
   - component: {fileID: 173015794}
+=======
+  - component: {fileID: -1345336762907154730}
+>>>>>>> ViktorPalmen:Assets/Resources/Food.prefab
   m_Layer: 0
-  m_Name: Ball
+  m_Name: Food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,15 +89,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD:Assets/Resources/Ball.prefab
 --- !u!114 &173015794
 MonoBehaviour:
+=======
+--- !u!58 &-1345336762907154730
+CircleCollider2D:
+>>>>>>> ViktorPalmen:Assets/Resources/Food.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7400775912024944860}
   m_Enabled: 1
+<<<<<<< HEAD:Assets/Resources/Ball.prefab
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b32f1ea7a1cdd240a586817bde5f6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+>>>>>>> ViktorPalmen:Assets/Resources/Food.prefab
