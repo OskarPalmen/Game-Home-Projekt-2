@@ -40,8 +40,24 @@ public class EnemyFollow : MonoBehaviour
                 Vector3 direction = player.position - transform.position;
                 direction.Normalize();
 
-                // Move towards the player
-                transform.Translate(direction * speed * Time.deltaTime);
+                // Rotate the enemy to face the player's direction
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+                // Calculate the angle between the enemy's forward vector and the direction towards the player
+                float angleDifference = Vector3.SignedAngle(transform.up, direction, Vector3.forward);
+
+                // Adjust the movement based on the angle difference
+                if (Mathf.Abs(angleDifference) > 5f)
+                {
+                    // Rotate the enemy towards the player more accurately
+                    transform.Rotate(Vector3.forward, Mathf.Sign(angleDifference) * speed * Time.deltaTime);
+                }
+                else
+                {
+                    // Move towards the player
+                    transform.Translate(Vector3.up * speed * Time.deltaTime);
+                }
             }
         }
     }
