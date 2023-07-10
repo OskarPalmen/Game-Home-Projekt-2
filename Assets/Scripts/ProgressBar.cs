@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -17,13 +18,17 @@ public class ProgressBar : MonoBehaviour
         obj.transform.SetParent(Selection.activeGameObject.transform, false);
     }
 #endif
-    public int minimum;
-    public int maximum;
-    public int current;
-    public Image mask;
-    public Image fill;
-    public Color color;
-    
+
+    public int minimum;      
+    public int maximum;      
+    public int current;      
+    public Image mask;       // The mask image that represents the fill amount
+    public Image fill;       // The fill image of the progress bar
+    public Color color;      // The color of the fill image
+    public float ExpIncrease;
+    public GameObject levelUpPanel;  // The panel to enable when the maximum is reached
+
+
     void Update()
     {
         GetCurrentFill();
@@ -31,11 +36,19 @@ public class ProgressBar : MonoBehaviour
 
     void GetCurrentFill()
     {
-        float currentOffset = current - minimum;
-        float maximumOffset = maximum - minimum;
-        float fillAmount = currentOffset / maximumOffset;
-        mask.fillAmount = fillAmount;
+        float currentOffset = current - minimum;                  // Calculate the offset between current and minimum
+        float maximumOffset = maximum - minimum;                  // Calculate the offset between maximum and minimum
+        float fillAmount = currentOffset / maximumOffset;         // Calculate the fill amount based on the current and maximum offset
 
-        fill.color = color;
+        if (current >= maximum)
+        {
+            fillAmount = 0f;                                      
+            current = minimum;                                    
+            maximum = Mathf.RoundToInt(maximum * ExpIncrease);           // Increase the maximum value by ExpIncrease
+            levelUpPanel.SetActive(true);                             // Enable the level up panel
+        }
+
+        mask.fillAmount = fillAmount;                             // Set the fill amount of the mask image
+        fill.color = color;                                       // Set the color of the fill image
     }
 }
