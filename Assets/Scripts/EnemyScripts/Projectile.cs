@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
             GameObject effectInstance = Instantiate(particleEffect, transform.position, transform.rotation);
             ParticleSystem particleSystem = effectInstance.GetComponent<ParticleSystem>();
             Destroy(effectInstance, particleSystem.main.duration);
+            FindObjectOfType<AudioManager>().Play("Explotion");
         }
     }
 
