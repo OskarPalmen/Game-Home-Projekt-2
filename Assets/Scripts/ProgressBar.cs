@@ -45,7 +45,7 @@ public class ProgressBar : MonoBehaviour
             fillAmount = 0f;                                      
             current = minimum;                                    
             maximum = Mathf.RoundToInt(maximum * ExpIncrease);           // Increase the maximum value by ExpIncrease
-            levelUpPanel.SetActive(true);                             // Enable the level up panel
+            levelUpPanel.SetActive(true);                             
         }
 
         mask.fillAmount = fillAmount;                             // Set the fill amount of the mask image
