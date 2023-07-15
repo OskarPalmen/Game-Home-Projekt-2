@@ -10,6 +10,7 @@ using UnityEditor;
 [ExecuteInEditMode()]
 public class ProgressBar : MonoBehaviour
 {
+    [SerializeField] TalentPanelManager talentPanel;
 #if UNITY_EDITOR
     [MenuItem("GameObject/UI/Linear Progress Bar")]
     public static void AddLinearProgressBar()
@@ -40,12 +41,12 @@ public class ProgressBar : MonoBehaviour
         float maximumOffset = maximum - minimum;                  // Calculate the offset between maximum and minimum
         float fillAmount = currentOffset / maximumOffset;         // Calculate the fill amount based on the current and maximum offset
 
-        if (current >= maximum)
+        if (current >= maximum) // When Player Levels up
         {
             fillAmount = 0f;                                      
             current = minimum;                                    
             maximum = Mathf.RoundToInt(maximum * ExpIncrease);           // Increase the maximum value by ExpIncrease
-            levelUpPanel.SetActive(true);                             
+            talentPanel.OpenPanel();                                // Open the talent panel                           
         }
 
         mask.fillAmount = fillAmount;                             // Set the fill amount of the mask image

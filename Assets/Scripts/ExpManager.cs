@@ -10,9 +10,4 @@ public class ExpManager : MonoBehaviour
         Destroy(other.gameObject);
         progressBar.current++; // Increment the current variable of the ProgressBar script
     }
-
-    void Update()
-    {
-        
-    }
 }
