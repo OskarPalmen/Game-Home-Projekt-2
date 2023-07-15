@@ -1,16 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    public Transform firePoint;  // The position where projectiles will be spawned
-    public GameObject projectilePrefab;  // Prefab of the projectile to be fired
+    public Transform firePoint;
+    public GameObject projectilePrefab;
 
-    public float fireRate = 1f;  // Rate at which the cannon will shoot (shots per second)
-    public float projectileLifetime = 5f;  // Time before the projectile gets destroyed
-    public float bulletSpeed = 10f;  // Speed of the projectile
+    public float fireRate = 1f;
+    public float projectileLifetime = 5f;
+    public float bulletSpeed = 10f;
 
-    private float fireDelay;  // Delay between shots
-    private float timer;  // Timer to keep track of fire rate
+    private float fireDelay;
+    private float timer;
 
     private void Start()
     {
@@ -34,10 +36,12 @@ public class Cannon : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
 
-        // Set the velocity of the projectile based on the shooting direction and bullet speed
         rb.velocity = firePoint.right * bulletSpeed;
 
-        // Destroy the projectile after the specified lifetime
+        // Attach a script to the projectile to handle destruction events
+        Projectile projectileScript = projectile.AddComponent<Projectile>();
+
         Destroy(projectile, projectileLifetime);
     }
+
 }
