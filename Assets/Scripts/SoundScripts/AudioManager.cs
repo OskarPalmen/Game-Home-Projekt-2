@@ -40,4 +40,9 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    public void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("Sand");
+    }
+
 }
