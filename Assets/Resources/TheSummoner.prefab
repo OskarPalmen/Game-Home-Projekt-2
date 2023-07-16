@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5357779245981582765}
   - component: {fileID: 5357779245981582766}
+  - component: {fileID: 4957930918923681419}
   - component: {fileID: 5357779245981582767}
   m_Layer: 0
   m_Name: TheSummoner
@@ -85,6 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4957930918923681419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5357779245981582416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db72ce7e3a3a86448b7444bf7a722c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  speed: 1
+  aggroRange: 5
 --- !u!114 &5357779245981582767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summonPrefabs:
   - {fileID: 4026173340512365324, guid: 4a6c4319cc4e20b4caf57130355f1975, type: 3}
+  - {fileID: 4026173340512365324, guid: 785e58e1a1c3fc746a479941b121927c, type: 3}
   summonCount: 5
   summonRadius: 1
   aggroRange: 5
